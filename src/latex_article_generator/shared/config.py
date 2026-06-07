@@ -26,8 +26,8 @@ class ConfigManager:
 
     def get_rate_limit(self, service: str = "default") -> dict:
         """Return rate limit dict for the named service."""
-        services = self._rate_limits.get("rate_limits", {}).get("services", {})
-        return services.get(service, services.get("default", {}))
+        limits = self._rate_limits.get("rate_limits", {})
+        return limits.get(service, limits.get("default", {}))
 
     def get_logging(self) -> dict:
         """Return the logging config dict (suitable for logging.config.dictConfig)."""

@@ -38,7 +38,7 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 |---|----------|-------------|--------|
 | 4 | [004_config_loader.md](prd/004_config_loader.md) | `ConfigManager` — reads JSON configs, validates version | DONE |
 | 5 | [005_environment_variables.md](prd/005_environment_variables.md) | `.env-example`, secrets via `os.environ`, no hardcoding | DONE |
-| 6 | [006_rate_limits_config.md](prd/006_rate_limits_config.md) | `rate_limits.json`, `RateLimitConfig` dataclass | NOT_STARTED |
+| 6 | [006_rate_limits_config.md](prd/006_rate_limits_config.md) | `rate_limits.json`, `RateLimitConfig` dataclass | DONE |
 
 ---
 
@@ -151,9 +151,9 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | Status | Count |
 |--------|-------|
-| DONE | 5 |
+| DONE | 6 |
 | IN_PROGRESS | 0 |
-| NOT_STARTED | 36 |
+| NOT_STARTED | 35 |
 
 ---
 

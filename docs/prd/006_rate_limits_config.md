@@ -3,7 +3,7 @@ id: "006"
 title: "Rate Limits Configuration"
 group: "2 — Configuration and Environment Handling"
 priority: high
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 006 — Rate Limits Configuration
@@ -59,10 +59,10 @@ class RateLimitConfig:
 
 ## Acceptance Criteria
 
-- [ ] `config_manager.get_rate_limit("default")["requests_per_minute"]` returns `20`.
-- [ ] `config_manager.get_rate_limit("openai")["max_retries"]` returns `5`.
-- [ ] `config_manager.get_rate_limit("unknown_service")` falls back to `"default"` rather than raising.
-- [ ] `RateLimitConfig` can be instantiated from the dict via `RateLimitConfig(**limits_dict)`.
+- [x] `config_manager.get_rate_limit("default")["requests_per_minute"]` returns `20`.
+- [x] `config_manager.get_rate_limit("openai")["max_retries"]` returns `5`.
+- [x] `config_manager.get_rate_limit("unknown_service")` falls back to `"default"` rather than raising.
+- [x] `RateLimitConfig` can be instantiated from the dict via `RateLimitConfig(**limits_dict)`.
 
 ## Notes / Constraints
 
