@@ -3,7 +3,7 @@ id: "040"
 title: "Integration Tests — End-to-End Pipeline"
 group: "12 — Testing and Final Submission Cleanup"
 priority: high
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 040 — Integration Tests

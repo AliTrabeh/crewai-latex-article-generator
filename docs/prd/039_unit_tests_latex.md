@@ -3,7 +3,7 @@ id: "039"
 title: "Unit Tests — LaTeX Generation and Compilation"
 group: "12 — Testing and Final Submission Cleanup"
 priority: high
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 039 — Unit Tests for LaTeX Generation and Compilation

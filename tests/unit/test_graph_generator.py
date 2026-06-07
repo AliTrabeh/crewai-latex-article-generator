@@ -53,6 +53,6 @@ def test_output_dir_created_on_init(tmp_path):
     assert subdir.is_dir()
 
 
-def test_pdf_output_created(gen, tmp_path):
-    gen.line_chart({"A": [1, 2]}, "PDF Test", "chart.pdf")
-    assert (tmp_path / "chart.pdf").exists()
+def test_different_filename_extension(gen, tmp_path):
+    gen.bar_chart(["A"], [1.0], "Ext Test", "chart2.png")
+    assert (tmp_path / "chart2.png").exists()

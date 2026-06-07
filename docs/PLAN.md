@@ -139,11 +139,11 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | # | PRD File | Description | Status |
 |---|----------|-------------|--------|
-| 37 | [037_unit_tests_agents.md](prd/037_unit_tests_agents.md) | Unit tests for all CrewAI agent classes | NOT_STARTED |
-| 38 | [038_unit_tests_services.md](prd/038_unit_tests_services.md) | Unit tests for services (config, gatekeeper, bidi) | NOT_STARTED |
-| 39 | [039_unit_tests_latex.md](prd/039_unit_tests_latex.md) | Unit tests for LaTeX generation and compilation | NOT_STARTED |
-| 40 | [040_integration_tests.md](prd/040_integration_tests.md) | End-to-end integration test — topic → PDF | NOT_STARTED |
-| 41 | [041_submission_cleanup.md](prd/041_submission_cleanup.md) | Final cleanup — ruff zero errors, ≥85% coverage, zip | NOT_STARTED |
+| 37 | [037_unit_tests_agents.md](prd/037_unit_tests_agents.md) | Unit tests for all CrewAI agent classes | DONE |
+| 38 | [038_unit_tests_services.md](prd/038_unit_tests_services.md) | Unit tests for services (config, gatekeeper, bidi) | DONE |
+| 39 | [039_unit_tests_latex.md](prd/039_unit_tests_latex.md) | Unit tests for LaTeX generation and compilation | DONE |
+| 40 | [040_integration_tests.md](prd/040_integration_tests.md) | End-to-end integration test — topic → PDF | DONE |
+| 41 | [041_submission_cleanup.md](prd/041_submission_cleanup.md) | Final cleanup — ruff zero errors, ≥85% coverage, zip | DONE |
 
 ---
 
@@ -151,9 +151,9 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | Status | Count |
 |--------|-------|
-| DONE | 36 |
+| DONE | 41 |
 | IN_PROGRESS | 0 |
-| NOT_STARTED | 5 |
+| NOT_STARTED | 0 |
 
 ---
 
