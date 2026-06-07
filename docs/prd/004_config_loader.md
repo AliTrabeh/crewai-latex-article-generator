@@ -3,6 +3,7 @@ id: "004"
 title: "ConfigManager — JSON Config Loader"
 group: "2 — Configuration and Environment Handling"
 priority: critical
+status: NOT_STARTED
 ---
 
 # Task 004 — ConfigManager

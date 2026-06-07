@@ -3,6 +3,7 @@ id: "026"
 title: "LuaLaTeX Single-Pass Runner"
 group: "8 — PDF Compilation"
 priority: critical
+status: NOT_STARTED
 ---
 
 # Task 026 — LuaLaTeX Single-Pass Runner

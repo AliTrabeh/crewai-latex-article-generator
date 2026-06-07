@@ -3,6 +3,7 @@ id: "001"
 title: "Project Directory Structure"
 group: "1 — Project Setup and Structure"
 priority: critical
+status: DONE
 ---
 
 # Task 001 — Project Directory Structure
@@ -63,9 +64,9 @@ crewai-latex-article-generator/
 
 ## Acceptance Criteria
 
-- [ ] `git status` shows no unexpected untracked directories.
-- [ ] `python -c "import latex_article_generator"` succeeds inside the `uv` env.
-- [ ] `.gitignore` excludes `results/*`, `data/*`, `.env`, `__pycache__`, `.venv`.
+- [x] `git status` shows no unexpected untracked directories.
+- [x] `python -c "import latex_article_generator"` succeeds inside the `uv` env.
+- [x] `.gitignore` excludes `results/*`, `data/*`, `.env`, `__pycache__`, `.venv`.
 
 ## Notes / Constraints
 

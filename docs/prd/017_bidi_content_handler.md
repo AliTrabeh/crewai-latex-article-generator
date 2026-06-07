@@ -3,6 +3,7 @@ id: "017"
 title: "BiDi Content Handler"
 group: "5 — Content Generation Pipeline"
 priority: high
+status: NOT_STARTED
 ---
 
 # Task 017 — BiDi Content Handler

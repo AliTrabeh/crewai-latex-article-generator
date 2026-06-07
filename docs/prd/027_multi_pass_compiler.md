@@ -3,6 +3,7 @@ id: "027"
 title: "Multi-Pass Compiler Orchestrator"
 group: "8 — PDF Compilation"
 priority: critical
+status: NOT_STARTED
 ---
 
 # Task 027 — Multi-Pass Compiler Orchestrator

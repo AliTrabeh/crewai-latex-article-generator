@@ -3,6 +3,7 @@ id: "005"
 title: "Environment Variables and Secrets Management"
 group: "2 — Configuration and Environment Handling"
 priority: critical
+status: NOT_STARTED
 ---
 
 # Task 005 — Environment Variables and Secrets Management

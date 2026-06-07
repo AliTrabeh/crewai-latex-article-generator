@@ -3,6 +3,7 @@ id: "011"
 title: "Research Task"
 group: "4 — CrewAI Tasks and Workflow"
 priority: high
+status: NOT_STARTED
 ---
 
 # Task 011 — Research Task

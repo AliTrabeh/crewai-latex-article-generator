@@ -3,6 +3,7 @@ id: "003"
 title: "Version Tracking"
 group: "1 — Project Setup and Structure"
 priority: high
+status: NOT_STARTED
 ---
 
 # Task 003 — Version Tracking

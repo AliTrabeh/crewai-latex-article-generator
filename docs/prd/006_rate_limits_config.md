@@ -3,6 +3,7 @@ id: "006"
 title: "Rate Limits Configuration"
 group: "2 — Configuration and Environment Handling"
 priority: high
+status: NOT_STARTED
 ---
 
 # Task 006 — Rate Limits Configuration

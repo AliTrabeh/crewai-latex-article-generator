@@ -3,6 +3,7 @@ id: "007"
 title: "ResearcherAgent"
 group: "3 — CrewAI Agents Design"
 priority: high
+status: NOT_STARTED
 ---
 
 # Task 007 — ResearcherAgent

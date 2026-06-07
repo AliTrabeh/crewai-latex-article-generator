@@ -3,6 +3,7 @@ id: "008"
 title: "WriterAgent"
 group: "3 — CrewAI Agents Design"
 priority: high
+status: NOT_STARTED
 ---
 
 # Task 008 — WriterAgent

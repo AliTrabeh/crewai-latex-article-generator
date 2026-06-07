@@ -3,6 +3,7 @@ id: "032"
 title: "CLI Argument Parser"
 group: "10 — CLI Entry Point"
 priority: high
+status: NOT_STARTED
 ---
 
 # Task 032 — CLI Argument Parser

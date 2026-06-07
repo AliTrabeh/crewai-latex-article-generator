@@ -3,6 +3,7 @@ id: "022"
 title: "Cover Page Generator"
 group: "7 — LaTeX Document Generation"
 priority: high
+status: NOT_STARTED
 ---
 
 # Task 022 — Cover Page Generator

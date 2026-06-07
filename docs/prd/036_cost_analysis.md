@@ -3,6 +3,7 @@ id: "036"
 title: "Cost Analysis Document"
 group: "11 — Documentation"
 priority: medium
+status: NOT_STARTED
 ---
 
 # Task 036 — Cost Analysis Document

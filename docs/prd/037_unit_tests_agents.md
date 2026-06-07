@@ -3,6 +3,7 @@ id: "037"
 title: "Unit Tests — CrewAI Agents"
 group: "12 — Testing and Final Submission Cleanup"
 priority: high
+status: NOT_STARTED
 ---
 
 # Task 037 — Unit Tests for CrewAI Agents

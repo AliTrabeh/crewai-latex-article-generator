@@ -3,6 +3,7 @@ id: "016"
 title: "ApiGatekeeper Implementation"
 group: "5 — Content Generation Pipeline"
 priority: critical
+status: NOT_STARTED
 ---
 
 # Task 016 — ApiGatekeeper Implementation

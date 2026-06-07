@@ -3,6 +3,7 @@ id: "020"
 title: "TikZ Diagram Generator"
 group: "6 — Assets Generation"
 priority: medium
+status: NOT_STARTED
 ---
 
 # Task 020 — TikZ Diagram Generator

@@ -3,6 +3,7 @@ id: "019"
 title: "LaTeX Table Generator"
 group: "6 — Assets Generation"
 priority: medium
+status: NOT_STARTED
 ---
 
 # Task 019 — LaTeX Table Generator

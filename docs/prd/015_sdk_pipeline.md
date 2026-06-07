@@ -3,6 +3,7 @@ id: "015"
 title: "SDK Pipeline — generate_article()"
 group: "5 — Content Generation Pipeline"
 priority: critical
+status: NOT_STARTED
 ---
 
 # Task 015 — SDK Pipeline

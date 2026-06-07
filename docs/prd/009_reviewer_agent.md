@@ -3,6 +3,7 @@ id: "009"
 title: "ReviewerAgent"
 group: "3 — CrewAI Agents Design"
 priority: high
+status: NOT_STARTED
 ---
 
 # Task 009 — ReviewerAgent

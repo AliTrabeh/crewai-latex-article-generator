@@ -3,6 +3,7 @@ id: "002"
 title: "Python Package Setup"
 group: "1 — Project Setup and Structure"
 priority: critical
+status: NOT_STARTED
 ---
 
 # Task 002 — Python Package Setup
