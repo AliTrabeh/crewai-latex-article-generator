@@ -46,10 +46,10 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | # | PRD File | Description | Status |
 |---|----------|-------------|--------|
-| 7 | [007_researcher_agent.md](prd/007_researcher_agent.md) | ResearcherAgent — role, goal, backstory, tools | NOT_STARTED |
-| 8 | [008_writer_agent.md](prd/008_writer_agent.md) | WriterAgent — drafts article sections | NOT_STARTED |
-| 9 | [009_reviewer_agent.md](prd/009_reviewer_agent.md) | ReviewerAgent — reviews and critiques draft | NOT_STARTED |
-| 10 | [010_latex_formatter_agent.md](prd/010_latex_formatter_agent.md) | LaTeXFormatterAgent — converts content to LaTeX | NOT_STARTED |
+| 7 | [007_researcher_agent.md](prd/007_researcher_agent.md) | ResearcherAgent — role, goal, backstory, tools | DONE |
+| 8 | [008_writer_agent.md](prd/008_writer_agent.md) | WriterAgent — drafts article sections | DONE |
+| 9 | [009_reviewer_agent.md](prd/009_reviewer_agent.md) | ReviewerAgent — reviews and critiques draft | DONE |
+| 10 | [010_latex_formatter_agent.md](prd/010_latex_formatter_agent.md) | LaTeXFormatterAgent — converts content to LaTeX | DONE |
 
 ---
 
@@ -151,9 +151,9 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | Status | Count |
 |--------|-------|
-| DONE | 6 |
+| DONE | 10 |
 | IN_PROGRESS | 0 |
-| NOT_STARTED | 35 |
+| NOT_STARTED | 31 |
 
 ---
 

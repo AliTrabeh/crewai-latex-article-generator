@@ -3,7 +3,7 @@ id: "010"
 title: "LaTeXFormatterAgent"
 group: "3 — CrewAI Agents Design"
 priority: high
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 010 — LaTeXFormatterAgent
@@ -44,11 +44,11 @@ def build_latex_formatter_agent(config: dict) -> Agent:
 
 ## Acceptance Criteria
 
-- [ ] `build_latex_formatter_agent({})` returns a `crewai.Agent` without error.
-- [ ] Agent `role` is exactly `"LaTeX Formatter"`.
-- [ ] `allow_delegation` is `False`.
-- [ ] Unit test confirms fields without LLM call.
-- [ ] File ≤ 150 lines.
+- [x] `build_latex_formatter_agent({})` returns a `crewai.Agent` without error.
+- [x] Agent `role` is exactly `"LaTeX Formatter"`.
+- [x] `allow_delegation` is `False`.
+- [x] Unit test confirms fields without LLM call.
+- [x] File ≤ 150 lines.
 
 ## Notes / Constraints
 

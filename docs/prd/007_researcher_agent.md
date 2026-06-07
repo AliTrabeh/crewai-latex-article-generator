@@ -3,7 +3,7 @@ id: "007"
 title: "ResearcherAgent"
 group: "3 — CrewAI Agents Design"
 priority: high
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 007 — ResearcherAgent
@@ -45,12 +45,12 @@ The function accepts a `config` dict so settings (verbosity, iteration limits) c
 
 ## Acceptance Criteria
 
-- [ ] `build_researcher_agent({})` returns a `crewai.Agent` instance without error.
-- [ ] Agent `role` is exactly `"Academic Researcher"`.
-- [ ] `SerperDevTool` is in `agent.tools`.
-- [ ] `allow_delegation` is `False`.
-- [ ] Unit test mocks `SerperDevTool` to avoid network calls.
-- [ ] File ≤ 150 lines.
+- [x] `build_researcher_agent({})` returns a `crewai.Agent` instance without error.
+- [x] Agent `role` is exactly `"Academic Researcher"`.
+- [x] `SerperDevTool` is in `agent.tools`.
+- [x] `allow_delegation` is `False`.
+- [x] Unit test mocks `SerperDevTool` to avoid network calls.
+- [x] File ≤ 150 lines.
 
 ## Notes / Constraints
 

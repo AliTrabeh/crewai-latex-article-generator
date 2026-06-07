@@ -3,7 +3,7 @@ id: "009"
 title: "ReviewerAgent"
 group: "3 — CrewAI Agents Design"
 priority: high
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 009 — ReviewerAgent
@@ -43,12 +43,12 @@ def build_reviewer_agent(config: dict) -> Agent:
 
 ## Acceptance Criteria
 
-- [ ] `build_reviewer_agent({})` returns a `crewai.Agent` without error.
-- [ ] Agent `role` is exactly `"Academic Reviewer"`.
-- [ ] `allow_delegation` is `False`.
-- [ ] `max_iter` defaults to `3` (fewer iterations needed — review is a single pass).
-- [ ] Unit test confirms fields without LLM call.
-- [ ] File ≤ 150 lines.
+- [x] `build_reviewer_agent({})` returns a `crewai.Agent` without error.
+- [x] Agent `role` is exactly `"Academic Reviewer"`.
+- [x] `allow_delegation` is `False`.
+- [x] `max_iter` defaults to `3` (fewer iterations needed — review is a single pass).
+- [x] Unit test confirms fields without LLM call.
+- [x] File ≤ 150 lines.
 
 ## Notes / Constraints
 

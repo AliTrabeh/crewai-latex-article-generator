@@ -3,7 +3,7 @@ id: "008"
 title: "WriterAgent"
 group: "3 — CrewAI Agents Design"
 priority: high
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 008 — WriterAgent
@@ -44,12 +44,12 @@ The writer agent has no tools — it relies entirely on the research context pas
 
 ## Acceptance Criteria
 
-- [ ] `build_writer_agent({})` returns a `crewai.Agent` instance without error.
-- [ ] Agent `role` is exactly `"Academic Writer"`.
-- [ ] `agent.tools` is an empty list.
-- [ ] `allow_delegation` is `False`.
-- [ ] Unit test verifies the agent fields without any LLM call.
-- [ ] File ≤ 150 lines.
+- [x] `build_writer_agent({})` returns a `crewai.Agent` instance without error.
+- [x] Agent `role` is exactly `"Academic Writer"`.
+- [x] `agent.tools` is an empty list.
+- [x] `allow_delegation` is `False`.
+- [x] Unit test verifies the agent fields without any LLM call.
+- [x] File ≤ 150 lines.
 
 ## Notes / Constraints
 
