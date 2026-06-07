@@ -129,9 +129,9 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | # | PRD File | Description | Status |
 |---|----------|-------------|--------|
-| 34 | [034_readme_final.md](prd/034_readme_final.md) | Final `README.md` — install, usage, examples, config guide | NOT_STARTED |
-| 35 | [035_prompts_engineering_log.md](prd/035_prompts_engineering_log.md) | `docs/prompts_log.md` — prompt iteration history | NOT_STARTED |
-| 36 | [036_cost_analysis.md](prd/036_cost_analysis.md) | `docs/cost_analysis.md` — token usage table, cost estimates | NOT_STARTED |
+| 34 | [034_readme_final.md](prd/034_readme_final.md) | Final `README.md` — install, usage, examples, config guide | DONE |
+| 35 | [035_prompts_engineering_log.md](prd/035_prompts_engineering_log.md) | `docs/prompts_log.md` — prompt iteration history | DONE |
+| 36 | [036_cost_analysis.md](prd/036_cost_analysis.md) | `docs/cost_analysis.md` — token usage table, cost estimates | DONE |
 
 ---
 
@@ -151,9 +151,9 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | Status | Count |
 |--------|-------|
-| DONE | 33 |
+| DONE | 36 |
 | IN_PROGRESS | 0 |
-| NOT_STARTED | 8 |
+| NOT_STARTED | 5 |
 
 ---
 

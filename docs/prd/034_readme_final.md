@@ -3,7 +3,7 @@ id: "034"
 title: "Final README"
 group: "11 — Documentation"
 priority: high
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 034 — Final README
