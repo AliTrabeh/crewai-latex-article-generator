@@ -1,0 +1,7 @@
+{
+  "version": "1.00",
+  "app_name": "crewai-latex-article-generator",
+  "default_output_format": "latex",
+  "default_latex_template": "article",
+  "log_level": "INFO"
+}
