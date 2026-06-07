@@ -68,9 +68,9 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | # | PRD File | Description | Status |
 |---|----------|-------------|--------|
-| 15 | [015_sdk_pipeline.md](prd/015_sdk_pipeline.md) | `ArticleGeneratorSDK.generate_article()` — full pipeline | NOT_STARTED |
-| 16 | [016_api_gatekeeper_impl.md](prd/016_api_gatekeeper_impl.md) | `ApiGatekeeper` — rate limiting, FIFO queue, retry | NOT_STARTED |
-| 17 | [017_bidi_content_handler.md](prd/017_bidi_content_handler.md) | BiDi handler — Hebrew RTL + English LTR mixing | NOT_STARTED |
+| 15 | [015_sdk_pipeline.md](prd/015_sdk_pipeline.md) | `ArticleGeneratorSDK.generate_article()` — full pipeline | DONE |
+| 16 | [016_api_gatekeeper_impl.md](prd/016_api_gatekeeper_impl.md) | `ApiGatekeeper` — rate limiting, FIFO queue, retry | DONE |
+| 17 | [017_bidi_content_handler.md](prd/017_bidi_content_handler.md) | BiDi handler — Hebrew RTL + English LTR mixing | DONE |
 
 ---
 
@@ -151,9 +151,9 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | Status | Count |
 |--------|-------|
-| DONE | 10 |
+| DONE | 13 |
 | IN_PROGRESS | 0 |
-| NOT_STARTED | 31 |
+| NOT_STARTED | 28 |
 
 ---
 
