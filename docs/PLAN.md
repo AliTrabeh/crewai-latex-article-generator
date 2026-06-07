@@ -100,9 +100,9 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | # | PRD File | Description | Status |
 |---|----------|-------------|--------|
-| 26 | [026_lualatex_compiler.md](prd/026_lualatex_compiler.md) | LuaLaTeX runner — single pass, error capture | NOT_STARTED |
-| 27 | [027_multi_pass_compiler.md](prd/027_multi_pass_compiler.md) | 4-pass orchestration: lualatex→biber→lualatex→lualatex | NOT_STARTED |
-| 28 | [028_biber_runner.md](prd/028_biber_runner.md) | Biber runner — bibliography processing between passes | NOT_STARTED |
+| 26 | [026_lualatex_compiler.md](prd/026_lualatex_compiler.md) | LuaLaTeX runner — single pass, error capture | DONE |
+| 27 | [027_multi_pass_compiler.md](prd/027_multi_pass_compiler.md) | 4-pass orchestration: lualatex→biber→lualatex→lualatex | DONE |
+| 28 | [028_biber_runner.md](prd/028_biber_runner.md) | Biber runner — bibliography processing between passes | DONE |
 
 ---
 
@@ -151,9 +151,9 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | Status | Count |
 |--------|-------|
-| DONE | 25 |
+| DONE | 28 |
 | IN_PROGRESS | 0 |
-| NOT_STARTED | 16 |
+| NOT_STARTED | 13 |
 
 ---
 

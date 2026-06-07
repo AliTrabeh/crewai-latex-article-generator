@@ -3,7 +3,7 @@ id: "028"
 title: "Biber Runner"
 group: "8 — PDF Compilation"
 priority: high
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 028 — Biber Runner
