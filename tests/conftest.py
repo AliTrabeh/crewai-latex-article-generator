@@ -2,7 +2,6 @@
 
 import pytest
 
-from latex_article_generator.shared.config import ConfigManager
 from latex_article_generator.shared.gatekeeper import ApiGatekeeper, RateLimitConfig
 
 

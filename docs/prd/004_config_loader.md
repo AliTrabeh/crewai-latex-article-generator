@@ -3,7 +3,7 @@ id: "004"
 title: "ConfigManager — JSON Config Loader"
 group: "2 — Configuration and Environment Handling"
 priority: critical
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 004 — ConfigManager
@@ -49,12 +49,12 @@ class ConfigManager:
 
 ## Acceptance Criteria
 
-- [ ] `ConfigManager()` (no args) finds `config/` using the default path.
-- [ ] `ConfigManager(config_dir="/custom/path")` uses the supplied path.
-- [ ] `config_manager.get("app_name")` returns `"crewai-latex-article-generator"`.
-- [ ] Corrupted or missing JSON file raises `FileNotFoundError` or `json.JSONDecodeError`.
-- [ ] Version mismatch raises `RuntimeError` with a descriptive message naming the mismatched file.
-- [ ] Unit test coverage ≥ 85% for this module.
+- [x] `ConfigManager()` (no args) finds `config/` using the default path.
+- [x] `ConfigManager(config_dir="/custom/path")` uses the supplied path.
+- [x] `config_manager.get("app_name")` returns `"crewai-latex-article-generator"`.
+- [x] Corrupted or missing JSON file raises `FileNotFoundError` or `json.JSONDecodeError`.
+- [x] Version mismatch raises `RuntimeError` with a descriptive message naming the mismatched file.
+- [x] Unit test coverage ≥ 85% for this module.
 
 ## Notes / Constraints
 

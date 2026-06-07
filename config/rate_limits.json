@@ -1,6 +1,6 @@
 {
+  "version": "1.00",
   "rate_limits": {
-    "version": "1.00",
     "services": {
       "default": {
         "requests_per_minute": 30,

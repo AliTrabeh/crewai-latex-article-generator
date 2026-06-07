@@ -1,6 +1,10 @@
 """Entry point — delegates all logic to the SDK."""
 
-from latex_article_generator.sdk.sdk import ArticleGeneratorSDK
+from dotenv import load_dotenv
+
+load_dotenv()
+
+from latex_article_generator.sdk.sdk import ArticleGeneratorSDK  # noqa: E402
 
 
 def main() -> None:

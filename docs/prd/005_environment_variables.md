@@ -3,7 +3,7 @@ id: "005"
 title: "Environment Variables and Secrets Management"
 group: "2 — Configuration and Environment Handling"
 priority: critical
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 005 — Environment Variables and Secrets Management
@@ -44,10 +44,10 @@ load_dotenv()  # reads .env if present, does not override already-set vars
 
 ## Acceptance Criteria
 
-- [ ] `git grep -r "sk-"` returns no matches (no real keys committed).
-- [ ] `.env` is listed in `.gitignore`.
-- [ ] Running the app without `.env` and without env vars raises a clear `EnvironmentError`, not a cryptic AttributeError.
-- [ ] `.env-example` is committed and contains all three placeholder keys.
+- [x] `git grep -r "sk-"` returns no matches (no real keys committed).
+- [x] `.env` is listed in `.gitignore`.
+- [x] Running the app without `.env` and without env vars raises a clear `EnvironmentError`, not a cryptic AttributeError.
+- [x] `.env-example` is committed and contains all three placeholder keys.
 
 ## Notes / Constraints
 

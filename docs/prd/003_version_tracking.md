@@ -3,7 +3,7 @@ id: "003"
 title: "Version Tracking"
 group: "1 — Project Setup and Structure"
 priority: high
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 003 — Version Tracking
@@ -43,9 +43,9 @@ assert __version__ == "1.00"
 
 ## Acceptance Criteria
 
-- [ ] `from latex_article_generator import __version__` returns `"1.00"`.
-- [ ] All three JSON config files contain `"version": "1.00"`.
-- [ ] Changing `__version__` to `"1.01"` while leaving configs at `"1.00"` causes `ConfigManager` to raise `RuntimeError` on init.
+- [x] `from latex_article_generator import __version__` returns `"1.00"`.
+- [x] All three JSON config files contain `"version": "1.00"`.
+- [x] Changing `__version__` to `"1.01"` while leaving configs at `"1.00"` causes `ConfigManager` to raise `RuntimeError` on init.
 
 ## Notes / Constraints
 

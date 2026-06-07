@@ -3,7 +3,7 @@ id: "002"
 title: "Python Package Setup"
 group: "1 — Project Setup and Structure"
 priority: critical
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 002 — Python Package Setup
@@ -67,10 +67,10 @@ After `uv sync --all-extras`:
 
 ## Acceptance Criteria
 
-- [ ] `uv sync --all-extras` exits 0.
-- [ ] `uv run python -c "import crewai"` exits 0.
-- [ ] `uv run ruff check src/` exits 0 on empty skeleton.
-- [ ] `uv.lock` committed to version control.
+- [x] `uv sync --all-extras` exits 0.
+- [x] `uv run python -c "import crewai"` exits 0.
+- [x] `uv run ruff check src/` exits 0 on empty skeleton.
+- [x] `uv.lock` committed to version control.
 
 ## Notes / Constraints
 

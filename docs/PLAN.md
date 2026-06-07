@@ -27,8 +27,8 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 | # | PRD File | Description | Status |
 |---|----------|-------------|--------|
 | 1 | [001_project_structure.md](prd/001_project_structure.md) | Directory layout, `.gitkeep` files, git hygiene | DONE |
-| 2 | [002_python_package_setup.md](prd/002_python_package_setup.md) | `pyproject.toml`, `uv`, `hatchling`, `ruff`, `pytest` | NOT_STARTED |
-| 3 | [003_version_tracking.md](prd/003_version_tracking.md) | `shared/version.py`, version consistency across code and config | NOT_STARTED |
+| 2 | [002_python_package_setup.md](prd/002_python_package_setup.md) | `pyproject.toml`, `uv`, `hatchling`, `ruff`, `pytest` | DONE |
+| 3 | [003_version_tracking.md](prd/003_version_tracking.md) | `shared/version.py`, version consistency across code and config | DONE |
 
 ---
 
@@ -36,8 +36,8 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | # | PRD File | Description | Status |
 |---|----------|-------------|--------|
-| 4 | [004_config_loader.md](prd/004_config_loader.md) | `ConfigManager` — reads JSON configs, validates version | NOT_STARTED |
-| 5 | [005_environment_variables.md](prd/005_environment_variables.md) | `.env-example`, secrets via `os.environ`, no hardcoding | NOT_STARTED |
+| 4 | [004_config_loader.md](prd/004_config_loader.md) | `ConfigManager` — reads JSON configs, validates version | DONE |
+| 5 | [005_environment_variables.md](prd/005_environment_variables.md) | `.env-example`, secrets via `os.environ`, no hardcoding | DONE |
 | 6 | [006_rate_limits_config.md](prd/006_rate_limits_config.md) | `rate_limits.json`, `RateLimitConfig` dataclass | NOT_STARTED |
 
 ---
@@ -151,9 +151,9 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | Status | Count |
 |--------|-------|
-| DONE | 1 |
+| DONE | 5 |
 | IN_PROGRESS | 0 |
-| NOT_STARTED | 40 |
+| NOT_STARTED | 36 |
 
 ---
 
