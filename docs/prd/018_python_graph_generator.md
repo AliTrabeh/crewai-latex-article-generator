@@ -3,7 +3,7 @@ id: "018"
 title: "Python Graph Generator"
 group: "6 — Assets Generation"
 priority: medium
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 018 — Python Graph Generator

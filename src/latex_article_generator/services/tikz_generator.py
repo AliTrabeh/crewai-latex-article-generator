@@ -1,24 +1,6 @@
----
-id: "020"
-title: "TikZ Diagram Generator"
-group: "6 — Assets Generation"
-priority: medium
-status: DONE
----
+"""TikZ diagram generator — task 020."""
 
-# Task 020 — TikZ Diagram Generator
 
-## Goal
-
-Implement a utility that generates TikZ LaTeX code for block diagrams, flowcharts, and system architecture diagrams that are embedded directly in the LaTeX document.
-
-## Files to Create or Modify
-
-- `src/latex_article_generator/services/tikz_generator.py` — `TikZGenerator` class
-
-## Exact Expected Behavior
-
-```python
 class TikZGenerator:
     def block_diagram(self, nodes: list[dict], edges: list[tuple[str, str]]) -> str:
         """
@@ -26,7 +8,6 @@ class TikZGenerator:
 
         nodes: list of {"id": str, "label": str, "x": float, "y": float}
         edges: list of (from_id, to_id)
-        Returns a complete tikzpicture environment string.
         """
         lines = ["\\begin{tikzpicture}[node distance=2cm]"]
         for node in nodes:
@@ -54,18 +35,3 @@ class TikZGenerator:
             prev = node_id
         lines.append("\\end{tikzpicture}")
         return "\n".join(lines)
-```
-
-## Acceptance Criteria
-
-- [ ] `generator.block_diagram([{"id":"a","label":"A","x":0,"y":0}], [])` contains `\begin{tikzpicture}`.
-- [ ] Edge `("a","b")` produces `\draw[->] (a) -- (b);`.
-- [ ] `generator.flowchart(["Start", "?Decision", "End"])` produces a diamond for "Decision".
-- [ ] Output is a valid string (no exception raised with valid inputs).
-- [ ] File ≤ 150 lines.
-
-## Notes / Constraints
-
-- The LaTeX preamble (task 021) must include `\usepackage{tikz}` — this generator only produces the picture environment content.
-- TikZ is part of MiKTeX/TeX Live — no additional installation needed on a standard LaTeX distribution.
-- The generated TikZ code is inserted into the `.tex` file by the LaTeX assembler (task 025).

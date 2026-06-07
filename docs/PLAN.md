@@ -78,9 +78,9 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | # | PRD File | Description | Status |
 |---|----------|-------------|--------|
-| 18 | [018_python_graph_generator.md](prd/018_python_graph_generator.md) | Matplotlib graphs — exported as `.pdf` or `.png` | NOT_STARTED |
-| 19 | [019_table_generator.md](prd/019_table_generator.md) | LaTeX table generator from structured data | NOT_STARTED |
-| 20 | [020_tikz_diagram_generator.md](prd/020_tikz_diagram_generator.md) | TikZ block diagrams and flowcharts | NOT_STARTED |
+| 18 | [018_python_graph_generator.md](prd/018_python_graph_generator.md) | Matplotlib graphs — exported as `.pdf` or `.png` | DONE |
+| 19 | [019_table_generator.md](prd/019_table_generator.md) | LaTeX table generator from structured data | DONE |
+| 20 | [020_tikz_diagram_generator.md](prd/020_tikz_diagram_generator.md) | TikZ block diagrams and flowcharts | DONE |
 
 ---
 
@@ -151,9 +151,9 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | Status | Count |
 |--------|-------|
-| DONE | 17 |
+| DONE | 20 |
 | IN_PROGRESS | 0 |
-| NOT_STARTED | 24 |
+| NOT_STARTED | 21 |
 
 ---
 
