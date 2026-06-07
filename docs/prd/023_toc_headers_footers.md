@@ -3,7 +3,7 @@ id: "023"
 title: "TOC, Headers, and Footers"
 group: "7 — LaTeX Document Generation"
 priority: medium
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 023 — Table of Contents, Headers, and Footers

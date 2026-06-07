@@ -3,7 +3,7 @@ id: "021"
 title: "Base LaTeX Template"
 group: "7 — LaTeX Document Generation"
 priority: critical
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 021 — Base LaTeX Template

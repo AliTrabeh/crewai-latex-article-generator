@@ -3,7 +3,7 @@ id: "024"
 title: "Bibliography Generator"
 group: "7 — LaTeX Document Generation"
 priority: high
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 024 — Bibliography Generator

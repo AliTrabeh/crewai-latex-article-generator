@@ -3,7 +3,7 @@ id: "025"
 title: "LaTeX Document Assembler"
 group: "7 — LaTeX Document Generation"
 priority: critical
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 025 — LaTeX Document Assembler

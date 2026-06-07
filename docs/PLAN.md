@@ -88,11 +88,11 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | # | PRD File | Description | Status |
 |---|----------|-------------|--------|
-| 21 | [021_latex_template.md](prd/021_latex_template.md) | Base `.tex` template with preamble, packages | NOT_STARTED |
-| 22 | [022_cover_page.md](prd/022_cover_page.md) | Cover page — title, author, date, affiliation | NOT_STARTED |
-| 23 | [023_toc_headers_footers.md](prd/023_toc_headers_footers.md) | TOC, headers, footers, page numbering | NOT_STARTED |
-| 24 | [024_bibliography_generator.md](prd/024_bibliography_generator.md) | `.bib` file generation, `\cite{}` insertion | NOT_STARTED |
-| 25 | [025_latex_assembler.md](prd/025_latex_assembler.md) | Assembles all parts into final `.tex` document | NOT_STARTED |
+| 21 | [021_latex_template.md](prd/021_latex_template.md) | Base `.tex` template with preamble, packages | DONE |
+| 22 | [022_cover_page.md](prd/022_cover_page.md) | Cover page — title, author, date, affiliation | DONE |
+| 23 | [023_toc_headers_footers.md](prd/023_toc_headers_footers.md) | TOC, headers, footers, page numbering | DONE |
+| 24 | [024_bibliography_generator.md](prd/024_bibliography_generator.md) | `.bib` file generation, `\cite{}` insertion | DONE |
+| 25 | [025_latex_assembler.md](prd/025_latex_assembler.md) | Assembles all parts into final `.tex` document | DONE |
 
 ---
 
@@ -151,9 +151,9 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | Status | Count |
 |--------|-------|
-| DONE | 20 |
+| DONE | 25 |
 | IN_PROGRESS | 0 |
-| NOT_STARTED | 21 |
+| NOT_STARTED | 16 |
 
 ---
 
