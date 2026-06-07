@@ -3,7 +3,7 @@ id: "029"
 title: "LaTeX Source Validator"
 group: "9 — Validation and Checking System"
 priority: high
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 029 — LaTeX Source Validator

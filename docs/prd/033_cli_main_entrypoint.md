@@ -3,7 +3,7 @@ id: "033"
 title: "CLI Main Entry Point"
 group: "10 — CLI Entry Point"
 priority: high
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 033 — CLI Main Entry Point

@@ -110,9 +110,9 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | # | PRD File | Description | Status |
 |---|----------|-------------|--------|
-| 29 | [029_latex_validator.md](prd/029_latex_validator.md) | LaTeX source validation — balanced braces, required sections | NOT_STARTED |
-| 30 | [030_pdf_validator.md](prd/030_pdf_validator.md) | PDF output validation — page count, file size, readability | NOT_STARTED |
-| 31 | [031_content_completeness_checker.md](prd/031_content_completeness_checker.md) | Content checker — all required sections present, min lengths | NOT_STARTED |
+| 29 | [029_latex_validator.md](prd/029_latex_validator.md) | LaTeX source validation — balanced braces, required sections | DONE |
+| 30 | [030_pdf_validator.md](prd/030_pdf_validator.md) | PDF output validation — page count, file size, readability | DONE |
+| 31 | [031_content_completeness_checker.md](prd/031_content_completeness_checker.md) | Content checker — all required sections present, min lengths | DONE |
 
 ---
 
@@ -120,8 +120,8 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | # | PRD File | Description | Status |
 |---|----------|-------------|--------|
-| 32 | [032_cli_argument_parser.md](prd/032_cli_argument_parser.md) | `argparse` CLI — `--topic`, `--output`, `--format` flags | NOT_STARTED |
-| 33 | [033_cli_main_entrypoint.md](prd/033_cli_main_entrypoint.md) | `src/main.py` — wires CLI args to SDK, handles exit codes | NOT_STARTED |
+| 32 | [032_cli_argument_parser.md](prd/032_cli_argument_parser.md) | `argparse` CLI — `--topic`, `--output`, `--format` flags | DONE |
+| 33 | [033_cli_main_entrypoint.md](prd/033_cli_main_entrypoint.md) | `src/main.py` — wires CLI args to SDK, handles exit codes | DONE |
 
 ---
 
@@ -151,9 +151,9 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | Status | Count |
 |--------|-------|
-| DONE | 28 |
+| DONE | 33 |
 | IN_PROGRESS | 0 |
-| NOT_STARTED | 13 |
+| NOT_STARTED | 8 |
 
 ---
 

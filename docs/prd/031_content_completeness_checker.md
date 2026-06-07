@@ -3,7 +3,7 @@ id: "031"
 title: "Content Completeness Checker"
 group: "9 — Validation and Checking System"
 priority: medium
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 031 — Content Completeness Checker
