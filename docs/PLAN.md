@@ -57,10 +57,10 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | # | PRD File | Description | Status |
 |---|----------|-------------|--------|
-| 11 | [011_research_task.md](prd/011_research_task.md) | Research task — topic investigation, source gathering | NOT_STARTED |
-| 12 | [012_writing_task.md](prd/012_writing_task.md) | Writing task — section drafting with context | NOT_STARTED |
-| 13 | [013_review_task.md](prd/013_review_task.md) | Review task — quality check, feedback loop | NOT_STARTED |
-| 14 | [014_crew_assembly.md](prd/014_crew_assembly.md) | Crew wiring — sequential process, agent+task linkage | NOT_STARTED |
+| 11 | [011_research_task.md](prd/011_research_task.md) | Research task — topic investigation, source gathering | DONE |
+| 12 | [012_writing_task.md](prd/012_writing_task.md) | Writing task — section drafting with context | DONE |
+| 13 | [013_review_task.md](prd/013_review_task.md) | Review task — quality check, feedback loop | DONE |
+| 14 | [014_crew_assembly.md](prd/014_crew_assembly.md) | Crew wiring — sequential process, agent+task linkage | DONE |
 
 ---
 
@@ -151,9 +151,9 @@ Work through groups 1 → 12 in sequence. Within a group, tasks are numbered in 
 
 | Status | Count |
 |--------|-------|
-| DONE | 13 |
+| DONE | 17 |
 | IN_PROGRESS | 0 |
-| NOT_STARTED | 28 |
+| NOT_STARTED | 24 |
 
 ---
 

@@ -3,7 +3,7 @@ id: "012"
 title: "Writing Task"
 group: "4 — CrewAI Tasks and Workflow"
 priority: high
-status: NOT_STARTED
+status: DONE
 ---
 
 # Task 012 — Writing Task
