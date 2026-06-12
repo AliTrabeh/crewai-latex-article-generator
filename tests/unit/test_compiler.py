@@ -33,7 +33,7 @@ def test_runner_returns_completed_process(ok_proc):
 
 def test_runner_raises_compilation_error_on_nonzero():
     proc = MagicMock(returncode=1, stderr="fatal error")
-    with patch(_SUBPROCESS, return_value=proc), pytest.raises(CompilationError, match="lualatex failed"):
+    with patch(_SUBPROCESS, return_value=proc), pytest.raises(CompilationError, match="xelatex failed"):
         LuaLatexRunner().run("bad.tex", "/tmp")
 
 
@@ -51,10 +51,10 @@ def test_runner_passes_output_directory(ok_proc):
     assert "/out" in cmd
 
 
-def test_runner_timeout_is_120(ok_proc):
+def test_runner_timeout_is_300(ok_proc):
     with patch(_SUBPROCESS, return_value=ok_proc) as m:
         LuaLatexRunner().run("doc.tex", "/tmp")
-    assert m.call_args[1]["timeout"] == 120
+    assert m.call_args[1]["timeout"] == 300
 
 
 # --- BiberRunner ---
@@ -102,7 +102,7 @@ def test_compile_returns_output_path(compiler_mocks, tmp_path):
     assert MultiPassCompiler({}).compile("\\documentclass{article}", out) == out
 
 
-def test_compile_three_lualatex_passes(compiler_mocks):
+def test_compile_three_xelatex_passes(compiler_mocks):
     mock_runner, _, _ = compiler_mocks
     MultiPassCompiler({}).compile("src", "/any/out.pdf")
     assert mock_runner.run.call_count == 3
@@ -123,7 +123,7 @@ def test_compile_copies_pdf_to_output(compiler_mocks, tmp_path):
 
 def test_compile_propagates_compilation_error(compiler_mocks):
     mock_runner, _, _ = compiler_mocks
-    mock_runner.run.side_effect = CompilationError("lualatex failed")
+    mock_runner.run.side_effect = CompilationError("xelatex failed")
     with pytest.raises(CompilationError):
         MultiPassCompiler({}).compile("src", "/any/out.pdf")
 

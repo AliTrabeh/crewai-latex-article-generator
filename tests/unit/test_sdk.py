@@ -12,7 +12,7 @@ _COMPILER = "latex_article_generator.services.compiler.MultiPassCompiler"
 
 @pytest.fixture
 def sdk(monkeypatch):
-    monkeypatch.setenv("OPENAI_API_KEY", "sk-test-fake")
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-test-fake")
     return ArticleGeneratorSDK()
 
 

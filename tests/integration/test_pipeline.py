@@ -23,8 +23,8 @@ This is the conclusion.
 
 
 @pytest.fixture(autouse=True)
-def fake_openai_key(monkeypatch):
-    monkeypatch.setenv("OPENAI_API_KEY", "sk-test-fake-integration")
+def fake_anthropic_key(monkeypatch):
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-test-fake-integration")
 
 
 @pytest.fixture
@@ -54,7 +54,7 @@ def test_generate_article_returns_kickoff_value(sdk):
     mock_crew.kickoff.return_value = MOCK_LATEX
     with patch(_CREW, return_value=mock_crew):
         result = sdk.generate_article("AI", ["intro"])
-    assert result == MOCK_LATEX
+    assert result == MOCK_LATEX.strip()
 
 
 def test_compile_pdf_returns_path(sdk, tmp_path):

@@ -14,7 +14,7 @@ def test_env_example_exists():
 
 def test_env_example_contains_all_required_keys():
     content = (PROJECT_ROOT / ".env-example").read_text(encoding="utf-8")
-    for key in ("OPENAI_API_KEY", "ANTHROPIC_API_KEY", "SERPER_API_KEY"):
+    for key in ("ANTHROPIC_API_KEY",):
         assert key in content, f"Missing key in .env-example: {key}"
 
 
@@ -35,8 +35,8 @@ def test_load_dotenv_present_in_entrypoint():
 
 def test_missing_api_key_raises_environment_error(monkeypatch):
     """Pattern: os.environ.get() + explicit EnvironmentError if None."""
-    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
-    key = os.environ.get("OPENAI_API_KEY")
-    with pytest.raises(OSError, match="OPENAI_API_KEY"):
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    key = os.environ.get("ANTHROPIC_API_KEY")
+    with pytest.raises(OSError, match="ANTHROPIC_API_KEY"):
         if not key:
-            raise OSError("OPENAI_API_KEY is not set")
+            raise OSError("ANTHROPIC_API_KEY is not set")

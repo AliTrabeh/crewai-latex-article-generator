@@ -1,32 +1,18 @@
 """Tests for all four task factories (tasks 011–014)."""
 
-from unittest.mock import patch
-
 import pytest
 from crewai import Task
-from crewai.tools import BaseTool
-
-_SERPER_TARGET = "latex_article_generator.services.researcher_agent.SerperDevTool"
-
-
-class _FakeSerperTool(BaseTool):
-    name: str = "Serper Search"
-    description: str = "Mock search tool for testing."
-
-    def _run(self, *args, **kwargs) -> str:  # noqa: ANN002
-        return ""
 
 
 @pytest.fixture(autouse=True)
-def fake_openai_key(monkeypatch):
-    monkeypatch.setenv("OPENAI_API_KEY", "sk-test-fake-key")
+def fake_anthropic_key(monkeypatch):
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-test-fake-key")
 
 
 @pytest.fixture
 def researcher():
-    with patch(_SERPER_TARGET, return_value=_FakeSerperTool()):
-        from latex_article_generator.services.researcher_agent import build_researcher_agent
-        return build_researcher_agent({})
+    from latex_article_generator.services.researcher_agent import build_researcher_agent
+    return build_researcher_agent({})
 
 
 @pytest.fixture

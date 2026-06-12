@@ -14,7 +14,9 @@ from latex_article_generator.services.tasks import (
 from latex_article_generator.services.writer_agent import build_writer_agent
 
 
-def build_crew(topic: str, sections: list[str], config: dict) -> Crew:
+def build_crew(
+    topic: str, sections: list[str], config: dict, *, graph_path: str = "", bib_path: str = ""
+) -> Crew:
     """Assemble and return the full article-generation Crew."""
     researcher = build_researcher_agent(config)
     writer = build_writer_agent(config)
@@ -24,7 +26,9 @@ def build_crew(topic: str, sections: list[str], config: dict) -> Crew:
     research_task = build_research_task(topic, sections, researcher)
     writing_task = build_writing_task(topic, sections, writer, research_task)
     review_task = build_review_task(reviewer, writing_task)
-    formatting_task = build_formatting_task(formatter, review_task)
+    formatting_task = build_formatting_task(
+        formatter, review_task, graph_path=graph_path, bib_path=bib_path
+    )
 
     return Crew(
         agents=[researcher, writer, reviewer, formatter],

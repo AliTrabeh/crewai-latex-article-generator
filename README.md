@@ -1,101 +1,162 @@
 # CrewAI LaTeX Article Generator
 
-A multi-agent system built with [CrewAI](https://crewai.com) that automatically generates well-structured, fully compiled academic articles in LaTeX format. Four specialized AI agents — Researcher, Writer, Reviewer, and LaTeX Formatter — collaborate in a sequential pipeline to produce publication-ready PDF documents with proper citations, BiDi (Hebrew/English) support, TikZ diagrams, and a complete bibliography.
+A multi-agent system built with [CrewAI](https://crewai.com) that automatically generates
+well-structured, fully compiled academic articles in LaTeX/PDF format.  
+Four specialized AI agents — **Researcher → Writer → Reviewer → LaTeX Formatter** — collaborate
+in a sequential pipeline powered by **Claude Sonnet 4.6** (Anthropic).
 
 **Key features:**
-- Multi-agent CrewAI pipeline with 4-pass LuaLaTeX compilation
-- Hebrew (RTL) / English (LTR) BiDi mixing via `polyglossia`
-- Automatic `.bib` generation and `biber` bibliography processing
-- Matplotlib graphs, LaTeX tables, and TikZ diagrams
-- Rate-limited OpenAI API access with retry logic
-- Full validation: LaTeX source, PDF output, content completeness
+- 4-agent CrewAI pipeline with sequential task execution
+- 4-pass XeLaTeX + biber compilation (citation resolution, cross-references)
+- Hebrew (RTL) / English (LTR) BiDi mixing via `polyglossia` + `fontspec`
+- Pre-generated Matplotlib bar chart embedded in the PDF
+- LaTeX tables (`booktabs`), display math, and TikZ flowcharts
+- Centralised `ApiGatekeeper` with rate limiting and retry logic
+- 85%+ test coverage, zero Ruff violations
 
 ---
 
-## Requirements
+## System Requirements
 
-| Requirement | Version |
-|---|---|
-| Python | ≥ 3.10 |
-| [uv](https://docs.astral.sh/uv/) | ≥ 0.4.0 |
-| MiKTeX or TeX Live | any recent (LuaLaTeX + biber required) |
-| OpenAI API key | GPT-4o recommended |
-| Serper API key | for ResearcherAgent web search |
+| Requirement | Version | Notes |
+|---|---|---|
+| Python | ≥ 3.10 | 3.13 tested |
+| [uv](https://docs.astral.sh/uv/) | ≥ 0.4.0 | sole package manager — never use `pip` |
+| MiKTeX | ≥ 26.x | provides `xelatex` and `biber` |
+| Anthropic API key | — | Claude Sonnet 4.6 model |
 
-`lualatex` and `biber` must be on your system `PATH`. Verify with:
-```bash
-lualatex --version
-biber --version
-```
+> **Windows note:** MiKTeX installs to  
+> `C:\Users\<you>\AppData\Local\Programs\MiKTeX\miktex\bin\x64\`  
+> and may not be on `PATH` by default (see [Running](#running) below).
 
 ---
 
 ## Installation
+
+All commands below use `uv`. Never use `pip install`.
 
 ```bash
 # 1. Clone the repository
 git clone <repo-url>
 cd crewai-latex-article-generator
 
-# 2. Install all dependencies (do NOT use pip install)
+# 2. Install all dependencies (including Anthropic extras)
 uv sync --all-extras
 
-# 3. Copy the environment template and add your API keys
-cp .env-example .env
-# Edit .env — at minimum set OPENAI_API_KEY and SERPER_API_KEY
+# 3. Copy the environment template
+cp .env-example .env        # Windows: copy .env-example .env
+```
 
+Open `.env` and set your key:
+
+```
+ANTHROPIC_API_KEY=sk-ant-...
+```
+
+```bash
 # 4. Verify the installation
 uv run pytest tests/ --no-cov -q
 ```
 
+All 251 tests should pass.
+
+### Installing MiKTeX (Windows)
+
+1. Download from <https://miktex.org/download> and run the installer.
+2. During setup, set **"Install missing packages on-the-fly"** to *Yes*.
+3. After installation, run once to initialise the font database:
+
+```powershell
+initexmf.exe --update-fndb
+initexmf.exe --mkmaps
+```
+
+4. Verify:
+
+```powershell
+xelatex --version   # MiKTeX-XeTeX 4.x
+biber --version
+```
+
 ---
 
-## Usage
+## Running
 
-**Generate a PDF article:**
-```bash
-uv run python src/main.py --topic "Transformer architectures in NLP" --format pdf
+### Windows (PowerShell)
+
+Add MiKTeX to the session PATH, then run:
+
+```powershell
+$env:PATH = "C:\Users\<you>\AppData\Local\Programs\MiKTeX\miktex\bin\x64;" + $env:PATH
+
+uv run python src/main.py `
+  --topic "Machine Learning in Healthcare" `
+  --sections introduction methodology results conclusion `
+  --format pdf `
+  --output results/article.pdf
 ```
 
-**Generate LaTeX source only (no compilation):**
-```bash
-uv run python src/main.py --topic "Federated Learning" --format latex --output results/fl.pdf
-```
+Replace `<you>` with your Windows username.
 
-**Specify custom sections:**
+### macOS / Linux (bash)
+
 ```bash
 uv run python src/main.py \
-  --topic "Quantum Computing" \
-  --sections introduction background methodology results conclusion \
+  --topic "Machine Learning in Healthcare" \
+  --sections introduction methodology results conclusion \
   --format pdf \
-  --output results/quantum.pdf
+  --output results/article.pdf
 ```
 
-**Enable verbose agent output:**
-```bash
-uv run python src/main.py --topic "AI Ethics" --verbose --format pdf
+### Output files
+
+After a successful run you will find:
+
+| File | Description |
+|---|---|
+| `results/article.tex` | Raw LaTeX source generated by the agent |
+| `results/article.pdf` | Compiled PDF (introduction → conclusion, bibliography) |
+| `results/ml_accuracy.png` | Bar chart embedded in the PDF |
+| `results/references.bib` | BibTeX bibliography (must be present before running) |
+
+---
+
+## CLI Reference
+
+```
+usage: main.py --topic TOPIC [--sections S [S ...]]
+               [--output PATH] [--format {latex,pdf}] [--verbose]
+
+required:
+  --topic TEXT          Article topic (e.g. "Federated Learning")
+
+optional:
+  --sections S [S ...]  Section names  (default: introduction methodology
+                                        results conclusion)
+  --output PATH         Output file    (default: results/article.pdf)
+  --format {latex,pdf}  Output format  (default: pdf)
+  --verbose             Show agent reasoning steps in the terminal
 ```
 
-**Full CLI reference:**
-```
-usage: article-generator [--topic TOPIC] [--sections S [S ...]]
-                         [--output PATH] [--format {latex,pdf}] [--verbose]
+**Examples:**
 
-  --topic       Article topic (required)
-  --sections    Section names (default: introduction methodology results conclusion)
-  --output      Output file path (default: results/article.pdf)
-  --format      Output format: latex or pdf (default: pdf)
-  --verbose     Print agent reasoning steps
+```powershell
+# LaTeX source only, no PDF compilation
+uv run python src/main.py --topic "Quantum Computing" --format latex
+
+# Custom sections, verbose output
+uv run python src/main.py --topic "AI Ethics" `
+  --sections abstract introduction background results conclusion `
+  --format pdf --verbose
 ```
 
 ---
 
 ## Configuration
 
-All configuration lives in `config/` — no values are hardcoded in source.
+All tuneable values live in `config/` — nothing is hardcoded in source files.
 
 ### `config/setup.json`
-Main application settings including version, institution name, default author, and log level.
 
 ```json
 {
@@ -106,109 +167,155 @@ Main application settings including version, institution name, default author, a
 }
 ```
 
+Set `"log_level": "DEBUG"` to see verbose agent output without the `--verbose` flag.
+
 ### `config/rate_limits.json`
-API rate limits per service. Adjust `requests_per_minute` if you hit OpenAI throttling.
+
+Controls the `ApiGatekeeper` that wraps every Anthropic API call.
 
 ```json
 {
   "version": "1.00",
   "rate_limits": {
-    "default": { "requests_per_minute": 20, "requests_per_hour": 200 },
-    "openai":  { "requests_per_minute": 60, "requests_per_hour": 500 }
+    "default": {
+      "requests_per_minute": 20,
+      "requests_per_hour": 200,
+      "concurrent_max": 5,
+      "retry_after_seconds": 30,
+      "max_retries": 3
+    }
   }
 }
 ```
 
 ### `config/logging_config.json`
-Standard Python `logging.config.dictConfig` format nested under the `"logging"` key.
+
+Standard Python `logging.config.dictConfig` format. Adjust handlers and levels as needed.
+
+### `.env`
+
+| Variable | Required | Description |
+|---|---|---|
+| `ANTHROPIC_API_KEY` | Yes | Anthropic API key (starts with `sk-ant-`) |
 
 ---
 
-## Project Structure
+## Architecture
 
 ```
-crewai-latex-article-generator/
-├── src/
-│   ├── main.py                          # CLI entry point
-│   └── latex_article_generator/
-│       ├── cli/
-│       │   └── parser.py                # argparse CLI argument parser
-│       ├── sdk/
-│       │   └── sdk.py                   # ArticleGeneratorSDK (public API)
-│       ├── services/
-│       │   ├── researcher_agent.py      # CrewAI ResearcherAgent factory
-│       │   ├── writer_agent.py          # CrewAI WriterAgent factory
-│       │   ├── reviewer_agent.py        # CrewAI ReviewerAgent factory
-│       │   ├── latex_formatter_agent.py # CrewAI LaTeXFormatterAgent factory
-│       │   ├── tasks.py                 # CrewAI Task factories (all 4 tasks)
-│       │   ├── crew.py                  # build_crew() assembles the Crew
-│       │   ├── compiler.py              # LuaLatexRunner, BiberRunner, MultiPassCompiler
-│       │   ├── bidi_handler.py          # Hebrew RTL wrapping
-│       │   ├── graph_generator.py       # Matplotlib figure export
-│       │   ├── table_generator.py       # LaTeX tabular generator
-│       │   ├── tikz_generator.py        # TikZ block diagram / flowchart generator
-│       │   ├── latex_template.py        # Base preamble template
-│       │   ├── cover_page.py            # Title page generator
-│       │   ├── toc_formatter.py         # TOC, headers, footers
-│       │   ├── bibliography_generator.py# .bib file generator
-│       │   ├── latex_assembler.py       # Assembles final .tex document
-│       │   └── validators.py            # LaTeX, PDF, and content validators
-│       └── shared/
-│           ├── config.py                # ConfigManager (reads all 3 JSON configs)
-│           ├── gatekeeper.py            # ApiGatekeeper with rate limiting + retry
-│           └── version.py              # Version constant
-├── tests/
-│   └── unit/                           # One test file per service module
-├── config/
-│   ├── setup.json
-│   ├── rate_limits.json
-│   └── logging_config.json
-├── docs/
-│   ├── PLAN.md                         # Master task index with status tracking
-│   ├── PROMPTS.md                      # Prompt templates used during development
-│   ├── prompts_log.md                  # Prompt engineering iteration log
-│   ├── cost_analysis.md                # Token usage and API cost report
-│   └── prd/                           # 41 individual task PRD files
-├── assets/                             # Generated graphs and figures
-├── pyproject.toml
-├── .env-example
-└── README.md
+CLI (main.py)
+    │
+    ▼
+ArticleGeneratorSDK          ← sole public entry point for all logic
+    │
+    ├── build_crew()          ← assembles the 4-agent CrewAI pipeline
+    │       ├── ResearcherAgent   (gathers facts, cites sources)
+    │       ├── WriterAgent       (drafts sections in academic English)
+    │       ├── ReviewerAgent     (quality-checks flow and citations)
+    │       └── LaTeXFormatterAgent  (emits compilable XeLaTeX)
+    │
+    ├── _strip_markdown_fences()   ← removes ``` wrappers LLMs add
+    ├── _patch_preamble()          ← fixes known XeLaTeX/biber issues
+    ├── _ensure_complete_document()← closes truncated LLM output
+    │
+    └── MultiPassCompiler
+            ├── Pass 1  xelatex  (tolerates biblatex pre-biber errors)
+            ├── Pass 2  biber    (resolves citations from .bib file)
+            ├── Pass 3  xelatex  (inserts resolved references)
+            └── Pass 4  xelatex  (fixes cross-references and TOC)
 ```
+
+All business logic flows through `ArticleGeneratorSDK`.  
+All Anthropic API calls pass through `ApiGatekeeper` (rate limiting + retry).  
+No secrets are ever hardcoded — only `os.environ` / `.env` file lookups.
+
+### Key source files
+
+| File | Responsibility |
+|---|---|
+| `src/main.py` | CLI entry point, graph pre-generation |
+| `src/.../sdk/sdk.py` | `ArticleGeneratorSDK` — public API |
+| `src/.../services/crew.py` | `build_crew()` — pipeline assembly |
+| `src/.../services/tasks.py` | 4 CrewAI task factories |
+| `src/.../services/compiler.py` | XeLaTeX + biber multi-pass compiler |
+| `src/.../services/graph_generator.py` | Matplotlib chart export |
+| `src/.../shared/gatekeeper.py` | `ApiGatekeeper` with rate limits |
+| `src/.../shared/config.py` | `ConfigManager` reads all JSON configs |
 
 ---
 
 ## Running Tests
 
-```bash
-# Full test suite with coverage
+```powershell
+# Full suite with coverage report (must stay ≥ 85%)
 uv run pytest tests/ --cov
 
-# Quick run without coverage (faster)
+# Quick run, no coverage (faster for development)
 uv run pytest tests/ --no-cov -q
 
-# Single test file
-uv run pytest tests/unit/test_agents.py -v --no-cov
+# Single file
+uv run pytest tests/unit/test_compiler.py -v --no-cov
 
-# Linting (must pass with 0 errors before committing)
+# Linting — must exit 0 before any commit
 uv run ruff check src/ tests/
 ```
 
-Coverage threshold is set to 85% in `pyproject.toml`. All modules must maintain this threshold at final submission.
+---
+
+## Troubleshooting
+
+| Symptom | Cause | Fix |
+|---|---|---|
+| `[WinError 2] The system cannot find xelatex` | MiKTeX not on PATH | Add MiKTeX bin dir to `$env:PATH` (see [Running](#running)) |
+| `xelatex failed — Emergency stop` | PDF open in viewer during compilation | Close the PDF, delete `results/article.pdf`, rerun |
+| `biber failed` or empty bibliography | `.bib` file missing | Ensure `results/references.bib` exists before running |
+| `UnicodeDecodeError cp1255` | Old `text=True` on subprocess | Fixed in current code — `encoding="utf-8", errors="replace"` |
+| SSL certificate errors (corporate proxy) | Windows cert store not trusted | `truststore.inject_into_ssl()` is called automatically in `main.py` |
+| `MiKTeX update check` blocking compilation | First run after install | Run `initexmf.exe --update-fndb && initexmf.exe --mkmaps` once |
+| Agent wraps output in ` ```latex ``` ` | LLM formatting habit | Auto-stripped by `_strip_markdown_fences()` in SDK |
+| PDF has undefined citations | Need biber pass | Normal on first pass — compiler runs 4 passes automatically |
+
+---
+
+## Project Documentation
+
+| Document | Location | Description |
+|---|---|---|
+| Architecture & task plan | `docs/PLAN.md` | All 41 tasks with status |
+| Product Requirements | `docs/PRD.md` | Goals, scope, acceptance criteria |
+| Task list | `docs/TODO.md` | Detailed task breakdown |
+| Per-algorithm PRDs | `docs/prd/` | 41 individual mechanism PRDs |
+| Prompt engineering log | `docs/PROMPTS.md` / `docs/prompts_log.md` | Prompts used during development |
+| API cost analysis | `docs/cost_analysis.md` | Token usage and cost breakdown |
 
 ---
 
 ## Contributing
 
-- **Code style:** `uv run ruff check` must exit 0 — no exceptions
-- **File length:** every source and test file must be ≤ 150 lines
-- **Testing:** write tests alongside code (Red → Green → Refactor)
-- **Dependencies:** use `uv add <package>` — never `pip install`
-- **Secrets:** never commit `.env` or any file containing real API keys
-- **Commits:** one logical change per commit with a descriptive message
+- **Package manager:** `uv add <pkg>` only — never `pip install`
+- **Code style:** `uv run ruff check src/ tests/` must exit 0
+- **File size:** every `.py` file must be ≤ 150 non-blank, non-comment lines
+- **Testing:** write or update tests alongside every code change (TDD)
+- **Secrets:** never commit `.env` or files with real API keys; use `.env-example`
+- **Commits:** one logical change per commit with a clear message
+
+---
+
+## Third-Party Credits
+
+| Library | Purpose |
+|---|---|
+| [CrewAI](https://crewai.com) | Multi-agent orchestration framework |
+| [Anthropic SDK](https://github.com/anthropics/anthropic-sdk-python) | Claude Sonnet 4.6 via LiteLLM |
+| [MiKTeX](https://miktex.org) | XeLaTeX + biber TeX distribution |
+| [Matplotlib](https://matplotlib.org) | Bar chart generation |
+| [python-dotenv](https://github.com/theskumar/python-dotenv) | `.env` file loading |
+| [truststore](https://github.com/sethmlarson/truststore) | Windows OS cert store for corporate proxies |
+| [uv](https://docs.astral.sh/uv/) | Package manager and task runner |
+| [Ruff](https://docs.astral.sh/ruff/) | Linter and formatter |
 
 ---
 
 ## License
 
-MIT License — Ali Trabeh  
-Built with [CrewAI](https://crewai.com), [uv](https://docs.astral.sh/uv/), and [Ruff](https://docs.astral.sh/ruff/).
+MIT License — Ali Trabeh (`atrabe08@gmail.com`)

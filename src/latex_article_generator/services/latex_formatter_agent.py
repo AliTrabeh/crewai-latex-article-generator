@@ -1,6 +1,6 @@
 """LaTeXFormatterAgent factory — task 010."""
 
-from crewai import Agent
+from crewai import LLM, Agent
 
 
 def build_latex_formatter_agent(config: dict) -> Agent:
@@ -17,6 +17,7 @@ def build_latex_formatter_agent(config: dict) -> Agent:
             "formatting, BibTeX/biber citation management, and bidirectional text handling "
             "with polyglossia and bidi packages."
         ),
+        llm=LLM(model="anthropic/claude-sonnet-4-6"),
         tools=[],
         verbose=config.get("verbose", False),
         allow_delegation=False,

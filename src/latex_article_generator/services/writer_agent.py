@@ -1,6 +1,6 @@
 """WriterAgent factory — task 008."""
 
-from crewai import Agent
+from crewai import LLM, Agent
 
 
 def build_writer_agent(config: dict) -> Agent:
@@ -15,6 +15,7 @@ def build_writer_agent(config: dict) -> Agent:
             "You are an experienced academic writer skilled in producing "
             "publication-ready prose for computer science and engineering papers."
         ),
+        llm=LLM(model="anthropic/claude-sonnet-4-6"),
         tools=[],
         verbose=config.get("verbose", False),
         allow_delegation=False,

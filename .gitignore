@@ -36,12 +36,15 @@ junit*.xml
 .DS_Store
 Thumbs.db
 
-# Project outputs (keep structure, ignore content)
+# Project outputs — ignore compiled artifacts, keep source assets
 results/*
 !results/.gitkeep
+!results/references.bib
+!results/*.png
 data/*
 !data/.gitkeep
 assets/*
 !assets/.gitkeep
 notebooks/*
 !notebooks/.gitkeep
+!notebooks/*.ipynb

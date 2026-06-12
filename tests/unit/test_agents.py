@@ -1,34 +1,18 @@
 """Unit tests for all four CrewAI agent factories (tasks 007–010)."""
 
-from unittest.mock import patch
-
 import pytest
 from crewai import Agent
-from crewai.tools import BaseTool
-
-_SERPER_TARGET = "latex_article_generator.services.researcher_agent.SerperDevTool"
-
-
-class _FakeSerperTool(BaseTool):
-    """Minimal BaseTool stand-in — no network calls."""
-
-    name: str = "Serper Search"
-    description: str = "Mock search tool for testing."
-
-    def _run(self, *args, **kwargs) -> str:  # noqa: ANN002
-        return ""
 
 
 @pytest.fixture(autouse=True)
-def fake_openai_key(monkeypatch):
-    monkeypatch.setenv("OPENAI_API_KEY", "sk-test-fake-key")
+def fake_anthropic_key(monkeypatch):
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-test-fake-key")
 
 
 @pytest.fixture
 def researcher():
-    with patch(_SERPER_TARGET, return_value=_FakeSerperTool()):
-        from latex_article_generator.services.researcher_agent import build_researcher_agent
-        return build_researcher_agent({})
+    from latex_article_generator.services.researcher_agent import build_researcher_agent
+    return build_researcher_agent({})
 
 
 def test_researcher_returns_agent(researcher):
@@ -43,9 +27,8 @@ def test_researcher_no_delegation(researcher):
     assert researcher.allow_delegation is False
 
 
-def test_researcher_has_tool(researcher):
-    assert len(researcher.tools) == 1
-    assert isinstance(researcher.tools[0], BaseTool)
+def test_researcher_no_tools(researcher):
+    assert researcher.tools == []
 
 
 def test_researcher_max_iter_default(researcher):
@@ -53,9 +36,8 @@ def test_researcher_max_iter_default(researcher):
 
 
 def test_researcher_verbose_override():
-    with patch(_SERPER_TARGET, return_value=_FakeSerperTool()):
-        from latex_article_generator.services.researcher_agent import build_researcher_agent
-        assert build_researcher_agent({"verbose": True}).verbose is True
+    from latex_article_generator.services.researcher_agent import build_researcher_agent
+    assert build_researcher_agent({"verbose": True}).verbose is True
 
 
 @pytest.fixture

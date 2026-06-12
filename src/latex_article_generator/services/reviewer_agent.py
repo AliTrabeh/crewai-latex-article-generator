@@ -1,6 +1,6 @@
 """ReviewerAgent factory — task 009."""
 
-from crewai import Agent
+from crewai import LLM, Agent
 
 
 def build_reviewer_agent(config: dict) -> Agent:
@@ -16,6 +16,7 @@ def build_reviewer_agent(config: dict) -> Agent:
             "You are a rigorous peer reviewer for top-tier academic conferences, "
             "known for thorough and constructive critique."
         ),
+        llm=LLM(model="anthropic/claude-sonnet-4-6"),
         tools=[],
         verbose=config.get("verbose", False),
         allow_delegation=False,
